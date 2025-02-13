@@ -201,13 +201,24 @@ map.on("click", async function (event) {
 
 document.getElementById("set-source").onclick = function () {
   tileLayer.setVisible(true);
-  Swal.fire("Layer Ditampilkan", "Layer peta telah diaktifkan.", "success");
+  Swal.fire({
+    title: "Peta Aktif!",
+    text: "Layer peta sudah muncul, silakan navigasi sesuka hati!",
+    icon: "success",
+    confirmButtonColor: "#28a745",
+  });
 };
 
 document.getElementById("unset-source").onclick = function () {
   tileLayer.setVisible(false);
-  Swal.fire("Layer Disembunyikan", "Layer peta telah disembunyikan.", "info");
+  Swal.fire({
+    title: "Layer Disembunyikan",
+    text: "Layer peta telah dinonaktifkan, klik 'Show Layer' untuk menampilkan kembali.",
+    icon: "warning",
+    confirmButtonColor: "#ff851b",
+  });
 };
+
 
 map.on("pointerdrag", function (event) {
   if (draggableMarker) {
